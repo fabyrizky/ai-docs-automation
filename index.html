@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Documentation Generator</title>
+    <meta name="description" content="Generate professional documentation automatically using AI - powered by Transformers.js">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="title">
+                    <span class="gradient-text">AI Documentation Generator</span>
+                </h1>
+                <p class="subtitle">Generate professional documentation automatically using browser-native AI</p>
+                <div class="badges">
+                    <span class="badge">🚀 Zero Server Cost</span>
+                    <span class="badge">🔒 Privacy-First</span>
+                    <span class="badge">⚡ Instant Processing</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Input Section -->
+            <section class="input-section">
+                <div class="input-card">
+                    <h2>📝 Create Documentation</h2>
+                    
+                    <!-- Document Type Selection -->
+                    <div class="form-group">
+                        <label for="docType">Document Type</label>
+                        <select id="docType" class="select-input">
+                            <option value="api">API Documentation</option>
+                            <option value="user-guide">User Guide</option>
+                            <option value="technical">Technical Specification</option>
+                            <option value="readme">README File</option>
+                            <option value="tutorial">Tutorial/How-to</option>
+                            <option value="proposal">Project Proposal</option>
+                        </select>
+                    </div>
+
+                    <!-- Prompt Input -->
+                    <div class="form-group">
+                        <label for="promptInput">Describe what you want to document</label>
+                        <textarea 
+                            id="promptInput" 
+                            class="textarea-input" 
+                            placeholder="Example: I need documentation for a React component library that includes buttons, forms, and modals. The library should be documented with examples and implementation guidelines."
+                            rows="4"
+                        ></textarea>
+                    </div>
+
+                    <!-- Additional Options -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="tone">Tone</label>
+                            <select id="tone" class="select-input">
+                                <option value="professional">Professional</option>
+                                <option value="friendly">Friendly</option>
+                                <option value="technical">Technical</option>
+                                <option value="casual">Casual</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="length">Length</label>
+                            <select id="length" class="select-input">
+                                <option value="brief">Brief</option>
+                                <option value="detailed">Detailed</option>
+                                <option value="comprehensive">Comprehensive</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Generate Button -->
+                    <button id="generateBtn" class="generate-btn">
+                        <span class="btn-text">Generate Documentation</span>
+                        <span class="btn-icon">✨</span>
+                    </button>
+
+                    <!-- Progress Indicator -->
+                    <div id="progressContainer" class="progress-container" style="display: none;">
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                        <p class="progress-text">Generating documentation...</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Output Section -->
+            <section class="output-section">
+                <div class="output-card">
+                    <div class="output-header">
+                        <h2>📄 Generated Documentation</h2>
+                        <div class="output-actions">
+                            <button id="copyBtn" class="action-btn" style="display: none;">
+                                <span>📋</span> Copy
+                            </button>
+                            <button id="downloadBtn" class="action-btn" style="display: none;">
+                                <span>⬇️</span> Download
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div id="outputContent" class="output-content">
+                        <div class="placeholder">
+                            <div class="placeholder-icon">📝</div>
+                            <p>Your generated documentation will appear here</p>
+                            <p class="placeholder-subtext">Enter your requirements above and click "Generate Documentation"</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sample Templates -->
+            <section class="templates-section">
+                <h2>📚 Quick Start Templates</h2>
+                <div class="templates-grid">
+                    <div class="template-card" data-template="api">
+                        <h3>🔌 API Documentation</h3>
+                        <p>RESTful API endpoints, authentication, and examples</p>
+                        <button class="template-btn">Use Template</button>
+                    </div>
+                    <div class="template-card" data-template="component">
+                        <h3>🧩 Component Library</h3>
+                        <p>React/Vue component documentation with props and examples</p>
+                        <button class="template-btn">Use Template</button>
+                    </div>
+                    <div class="template-card" data-template="setup">
+                        <h3>⚙️ Setup Guide</h3>
+                        <p>Installation and configuration instructions</p>
+                        <button class="template-btn">Use Template</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Powered by <a href="https://huggingface.co/docs/transformers.js" target="_blank">Transformers.js</a> • 
+               Deployed on <a href="https://vercel.com" target="_blank">Vercel</a> • 
+               <a href="https://github.com" target="_blank">View on GitHub</a>
+            </p>
+        </footer>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay" style="display: none;">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <p>Loading AI model...</p>
+            <p class="loading-subtext">This may take a moment on first use</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
