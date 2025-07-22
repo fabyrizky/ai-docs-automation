@@ -1,25 +1,13 @@
 {
   "name": "ai-docs-automation",
   "version": "1.0.0",
-  "description": "AI-powered documentation generator using browser-native processing",
-  "main": "index.html",
+  "type": "module",
   "scripts": {
-    "dev": "python -m http.server 3000",
-    "build": "echo 'Static build complete'",
-    "deploy": "vercel --prod"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "keywords": [
-    "ai",
-    "documentation",
-    "automation",
-    "transformers",
-    "vercel"
-  ],
-  "author": "Your Name",
-  "license": "MIT",
-  "engines": {
-    "node": ">=18.0.0"
-  },
-  "devDependencies": {},
-  "dependencies": {}
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
 }
